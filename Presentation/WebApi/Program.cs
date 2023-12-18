@@ -1,4 +1,6 @@
 using Application.Features.CQRS.Handlers.AboutHandlers;
+using Application.Features.CQRS.Handlers.BannerHandlers;
+using Application.Features.CQRS.Handlers.BrandHandlers;
 using Application.Interfaces;
 using Persistance.Context;
 using WebApi.Repositories;
@@ -14,6 +16,19 @@ builder.Services.AddScoped<GetAboutByIdQueryHandler>();
 builder.Services.AddScoped<RemoveAboutCommandHandler>();
 builder.Services.AddScoped<UpdateAboutCommandHandler>();
 builder.Services.AddScoped<CreateAboutCommandHandle>();
+
+builder.Services.AddScoped<GetBannerQueryHandler>();
+builder.Services.AddScoped<GetBannerByIdQueryHandler>();
+builder.Services.AddScoped<RemoveBannerCommandHandler>();
+builder.Services.AddScoped<UpdateBannerCommandHandler>();
+builder.Services.AddScoped<CreateBannerCommandHandler>();
+
+builder.Services.AddScoped<GetBrandQueryHandler>();
+builder.Services.AddScoped<GetBrandByIdQueryHandler>();
+builder.Services.AddScoped<RemoveBrandCommandHandler>();
+builder.Services.AddScoped<UpdateBrandCommandHandler>();
+builder.Services.AddScoped<CreateBrandCommandHandler>();
+
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
