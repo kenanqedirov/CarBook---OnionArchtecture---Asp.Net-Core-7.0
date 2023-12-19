@@ -6,6 +6,7 @@ using Application.Features.CQRS.Handlers.CategoryHandlers;
 using Application.Features.CQRS.Handlers.ContactHandlers;
 using Application.Interfaces;
 using Application.Interfaces.CarInterfaces;
+using Application.Services;
 using Domain.Entities;
 using Persistance.Context;
 using WebApi.Repositories;
@@ -56,7 +57,7 @@ builder.Services.AddScoped<UpdateContactCommandHandler>();
 builder.Services.AddScoped<CreateContactCommandHandler>();
 
 #endregion
-
+builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
